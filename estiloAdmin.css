@@ -36,6 +36,9 @@ div#cabecera > h1 , h3{
 h1{
     width: 732px;
 }
+h3{
+    float: right;
+}
 
 .btn-volver {
     display: inline-block;

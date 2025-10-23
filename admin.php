@@ -3,7 +3,7 @@
     $conexion->select_db("los_mismos");
 
     // Obtener todas las sugerencias
-    $sql = "SELECT SUGERENCIAS.idSugerencia, SUGERENCIAS.Texto, SUGERENCIAS.Email, SUGERENCIAS.Fecha, TEMAS.Nombre as Tema, GRUPO.Nombre as Grupo
+    $sql = "SELECT SUGERENCIAS.idSugerencia, SUGERENCIAS.Texto, SUGERENCIAS.Fecha, TEMAS.Nombre as Tema, GRUPO.Nombre as Grupo
                 FROM SUGERENCIAS
                 INNER JOIN TEMAS ON SUGERENCIAS.idTema = TEMAS.idTema
                 INNER JOIN GRUPO ON SUGERENCIAS.idGrupo = GRUPO.idGrupo
@@ -28,8 +28,6 @@
 </head>
 <body>
     <div class="contenedor">
-        <a href="inicio.php" class="btn-volver">← Volver</a>
-
         <div id="cabecera">
             <h1>Panel de Administración</h1>
             <?php 
@@ -45,7 +43,6 @@
                     <th>Sugerencia</th>
                     <th>Tema</th>
                     <th>Grupo</th>
-                    <th>Email</th>
                 </tr>
             </thead>
             <tbody>
@@ -58,13 +55,6 @@
                             echo "<td>{$fila['Texto']}</td>";
                             echo "<td><span class='tema'>{$fila['Tema']}</span></td>";
                             echo "<td><span class='grupo'>{$fila['Grupo']}</span></td>";
-                            
-                            if ($fila['Email']) {
-                                echo "<td>{$fila['Email']}</td>";
-                            } else {
-                                echo "<td class='sin-email'>Sin email</td>";
-                            }
-                            
                             echo "</tr>";
                         }
                     } else {

@@ -24,9 +24,8 @@
         <link rel="stylesheet" href="estilo.css">
     </head>
     <body>
-        <a href="admin.html" class="btn-login">Admin</a>
         <img src="imagenes/logo.jpeg" alt="Logo Comparsa"><br>
-        <form action="enviar-datos.php" method="POST">
+        <form action="enviar-datos.php" method="POST" onsubmit="mostrarMensaje()">
             <h1>BUZON DE SUGERENCIAS</h1>
             
             <!-- Radio buttons -->
@@ -73,6 +72,12 @@
         <footer>
             <p>&copy; 2025 Aitor Gómez Cerrato - Todos los derechos reservados.</p>
         </footer>
+        <script>
+            function mostrarMensaje() {
+                alert('¡Sugerencia enviada correctamente!');
+                return true; // Permite que el formulario se envíe
+            }
+        </script>
     </body>
 </html>
 <?php

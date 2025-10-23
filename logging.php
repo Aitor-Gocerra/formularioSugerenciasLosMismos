@@ -9,7 +9,7 @@
 
     $email = $_POST["email"];
 
-    $sql = "SELECT Email FROM USUARIOS WHERE Email = {$email}";
+    $sql = "SELECT Email FROM USUARIOS WHERE Email = '{$email}'";
     echo $sql;
 
     $resultado = $conexion->query($sql);

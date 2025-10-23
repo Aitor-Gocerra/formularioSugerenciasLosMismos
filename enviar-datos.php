@@ -23,5 +23,7 @@
     }
 
     $conexion->close();
+    header("Location: inicio.php");
+    exit();
 
 ?>
