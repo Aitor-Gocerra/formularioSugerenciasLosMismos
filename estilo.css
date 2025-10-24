@@ -7,9 +7,16 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background: linear-gradient(-45deg, #a8e6cf, #56c596, #f9f871, #f4ac3f);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
     padding: 20px;
     text-align: center;
+}
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 /* Botón de login */
 .btn-login {
@@ -74,6 +81,17 @@ input[type="radio"] {
 input[type="checkbox"] {
     margin: 15px 5px;
     cursor: pointer;
+}
+input[type="email"]{
+    border: 2px solid #18481a;
+    width: 220px;
+    padding-left: 5px;
+    margin: 10px 5px;
+    cursor: pointer;
+}
+#email{
+    font-family: Arial, sans-serif;
+    font-size: 28px;
 }
 
 /* Select */
