@@ -9,7 +9,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
-    background: #f0f2f5; /* Un gris muy suave, moderno */
+    background: #f0f2f5;
     color: #333;
 }
 
@@ -23,15 +23,15 @@ body {
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
-/* Cabecera con Flexbox (Adiós a los floats y anchos fijos) */
+/* Cabecera con Flexbox */
 #cabecera {
     display: flex;
-    justify-content: space-between; /* Separa título y contador/botón */
-    align-items: center; /* Alinea verticalmente */
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 2px solid #e0e0e0;
     padding-bottom: 20px;
     margin-bottom: 25px;
-    flex-wrap: wrap; /* Permite que baje en móviles */
+    flex-wrap: wrap;
     gap: 15px;
 }
 
@@ -39,56 +39,77 @@ body {
     margin: 0;
     font-size: 24px;
     color: #2c3e50;
-    border: none; /* Quitamos el borde inferior individual */
+    flex: 1 1 auto;
+    min-width: 200px;
+}
+
+/* Contenedor de controles (contador + botón) */
+.controles-header {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 #cabecera h3 {
     margin: 0;
-    font-size: 16px;
+    font-size: 14px;
     color: #666;
     background-color: #f8f9fa;
     padding: 8px 15px;
     border-radius: 20px;
     border: 1px solid #ddd;
+    white-space: nowrap;
 }
 
-/* Botón de salir */
+/* Botón de salir mejorado */
 .btn-volver {
     text-decoration: none;
     background-color: #e74c3c;
     color: white;
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 6px;
     font-weight: 600;
     font-size: 14px;
-    transition: background 0.3s ease;
-    display: inline-block;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(231, 76, 60, 0.2);
 }
 
 .btn-volver:hover {
     background-color: #c0392b;
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-volver:active {
+    transform: translateY(0);
 }
 
 /* Contenedor de la tabla para scroll en móviles */
 .tabla-responsive {
     width: 100%;
-    overflow-x: auto; /* Permite scroll horizontal si no cabe */
+    overflow-x: auto;
+    margin-top: 10px;
 }
 
 /* Estilos de la Tabla */
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 600px; /* Asegura que no se aplaste demasiado */
+    min-width: 600px;
 }
 
 thead {
-    background-color: #4CAF50; /* Tu color verde corporativo */
+    background-color: #4CAF50;
     color: white;
 }
 
 th, td {
-    padding: 15px;
+    padding: 15px 10px;
     text-align: left;
     border-bottom: 1px solid #eee;
 }
@@ -100,8 +121,12 @@ th {
     letter-spacing: 0.5px;
 }
 
-tr:hover {
-    background-color: #f9fbf9; /* Color muy sutil al pasar el ratón */
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #f9fbf9;
 }
 
 /* Etiquetas de colores para Tema y Grupo */
@@ -111,6 +136,7 @@ tr:hover {
     border-radius: 12px;
     font-size: 0.85em;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 .tema {
@@ -123,6 +149,21 @@ tr:hover {
     background: #e3f2fd;
     color: #1565c0;
     border: 1px solid #bbdefb;
+}
+
+/* --- RESPONSIVE (TABLETS) --- */
+@media (max-width: 992px) {
+    .contenedor {
+        padding: 20px;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    th, td {
+        padding: 12px 8px;
+    }
 }
 
 /* --- RESPONSIVE (MÓVILES) --- */
@@ -138,12 +179,70 @@ tr:hover {
     #cabecera {
         flex-direction: column;
         align-items: flex-start;
+        gap: 12px;
     }
     
     #cabecera h1 {
         font-size: 20px;
+        width: 100%;
     }
+    
+    /* Los controles ocupan todo el ancho en móvil */
+    .controles-header {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    #cabecera h3 {
+        font-size: 13px;
+        padding: 6px 12px;
+        flex: 1;
+        text-align: center;
+    }
+    
+    .btn-volver {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+    
+    /* Tabla más compacta en móvil */
+    table {
+        font-size: 13px;
+        min-width: 500px;
+    }
+    
+    th, td {
+        padding: 10px 6px;
+    }
+    
+    .tema, .grupo {
+        font-size: 0.75em;
+        padding: 3px 8px;
+    }
+}
 
-    /* Ocultar columnas menos importantes en móvil si quieres, 
-       o dejar el scroll horizontal (que ya está activado con .tabla-responsive) */
+/* --- RESPONSIVE (MÓVILES PEQUEÑOS) --- */
+@media (max-width: 480px) {
+    #cabecera h1 {
+        font-size: 18px;
+    }
+    
+    .controles-header {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+    
+    #cabecera h3,
+    .btn-volver {
+        width: 100%;
+    }
+    
+    table {
+        font-size: 12px;
+    }
+    
+    th, td {
+        padding: 8px 5px;
+    }
 }

@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel Admin - Los Mismos</title>
-    <link rel="stylesheet" href="css/estiloAdmin.css"> </head>
+    <link rel="stylesheet" href="css/estiloAdmin.css">
+</head>
 <body>
     <div class="contenedor">
         <div id="cabecera">
             <h1>Panel de Administración</h1>
-            <div style="display:flex; gap:10px; align-items:center;">
+            <div class="controles-header">
                 <?php echo "<h3>" . ($numFilas ?? 0) . " sugerencias</h3>"; ?>
                 <a href="index.php?c=Usuario&m=cerrarSesion" class="btn-volver">Cerrar Sesión</a>
             </div>
@@ -28,11 +29,11 @@
                 </thead>
                 <tbody>
                     <?php 
-                        if (!empty($sugerencias)) { // Usando la variable array del controlador nuevo
+                        if (!empty($sugerencias)) {
                             foreach ($sugerencias as $fila) {
                                 echo "<tr>";
                                 echo "<td><strong>#{$fila['idSugerencia']}</strong></td>";
-                                echo "<td>" . date('d/m/Y', strtotime($fila['Fecha'])) . "</td>"; // Formateamos la fecha un poco mejor
+                                echo "<td>" . date('d/m/Y', strtotime($fila['Fecha'])) . "</td>";
                                 echo "<td>{$fila['Texto']}</td>";
                                 echo "<td><span class='tema'>{$fila['Tema']}</span></td>";
                                 echo "<td><span class='grupo'>{$fila['Grupo']}</span></td>";
