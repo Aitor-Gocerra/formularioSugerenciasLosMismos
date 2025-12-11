@@ -1,20 +1,3 @@
-<?php
-    require "config.php";
-    $conexion->select_db("los_mismos");
-
-    // Verificar conexión
-    if ($conexion->connect_error) {
-        die("Error de conexión: " . $conexion->connect_error);
-    }
-
-    // Consulta para obtener los temas y el grupo
-    $sql1 = "SELECT idTema, Nombre FROM TEMAS";
-    $resultado1 = $conexion->query($sql1);
-    $sql2 = "SELECT idGrupo, Nombre FROM GRUPO";
-    $resultado2 = $conexion->query($sql2);
-    $sql3 = "SELECT idContacto, Nombre FROM CONTACTO";
-    $resultado3 = $conexion->query($sql3);
-?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -80,7 +63,3 @@
         </script>
     </body>
 </html>
-<?php
-    // Cerrar conexión
-    $conexion->close();
-?>

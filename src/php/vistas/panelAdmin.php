@@ -1,23 +1,3 @@
-<?php
-    require "config.php";
-    $conexion->select_db("los_mismos");
-
-    // Obtener todas las sugerencias
-    $sql = "SELECT SUGERENCIAS.idSugerencia, SUGERENCIAS.Texto, SUGERENCIAS.Fecha, TEMAS.Nombre as Tema, GRUPO.Nombre as Grupo
-                FROM SUGERENCIAS
-                INNER JOIN TEMAS ON SUGERENCIAS.idTema = TEMAS.idTema
-                INNER JOIN GRUPO ON SUGERENCIAS.idGrupo = GRUPO.idGrupo
-                ORDER BY SUGERENCIAS.Fecha DESC";
-    
-    $resultado = $conexion->query($sql);
-
-    $numFilas = $resultado->num_rows;
-
-    // Contar las sugerencias
-    // ?? con una funcion de agregado COUNT
-    // o con un $resultado.lenght???
-
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -67,6 +47,3 @@
     </div>
 </body>
 </html>
-<?php
-    $conexion->close();
-?>

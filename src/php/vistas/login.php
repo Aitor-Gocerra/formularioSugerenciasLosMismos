@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="estilo.css">
+        <title>Login</title>
+        <link rel="stylesheet" href="css/estilo.css">
     </head>
     <body>
         <img src="imagenes/logo.jpeg" alt="Logo Comparsa"><br>
-        <form action="logging.php" method="POST">
+        <form action="index.php?c=Usuario&m=inicio" method="POST">
             <!-- EMAIL -->
             <label id="email">Introduce tu email</label>
             <br>
