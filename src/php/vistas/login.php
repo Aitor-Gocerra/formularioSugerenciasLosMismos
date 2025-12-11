@@ -17,6 +17,7 @@
             <button type="submit">Enviar</button>
             <!-- <button type="reset">Borrar</button> -->
         </form>
+        <a href="index.php?c=Usuario&m=registro">¿Aun no te has registrado? Hazlo aqui</a>
         <footer>
             <p>&copy; 2025 Aitor Gómez Cerrato - Todos los derechos reservados.</p>
         </footer>
