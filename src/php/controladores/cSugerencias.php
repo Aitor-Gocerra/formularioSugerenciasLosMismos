@@ -6,7 +6,7 @@ class CSugerencias {
     public $datos;
 
     public function __construct() {
-        require_once RUTA_MODELOS . 'mSugerencias.php';
+        require_once RUTA_MODELOS . 'Sugerencias.php';
         $this->objSugerencias = new MSugerencias();
         $this->vista = '';
         $this->datos = [];

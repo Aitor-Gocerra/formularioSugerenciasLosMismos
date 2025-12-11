@@ -16,8 +16,11 @@
             <!-- Botones -->
             <button type="submit">Enviar</button>
             <!-- <button type="reset">Borrar</button> -->
+             <div style="margin-top: 20px; text-align: center;">
+                <p>¿Aún no tienes cuenta?</p>
+                <a href="index.php?c=Usuario&m=registro" class="boton-enlace">Registrarse</a>
+            </div>
         </form>
-        <a href="index.php?c=Usuario&m=registro">¿Aun no te has registrado? Hazlo aqui</a>
         <footer>
             <p>&copy; 2025 Aitor Gómez Cerrato - Todos los derechos reservados.</p>
         </footer>

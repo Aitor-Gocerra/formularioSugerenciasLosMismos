@@ -1,11 +1,11 @@
 <?php
 
-    class CUsuarios {
+    class CUsuario {
         private $objUsuario;
         public $vista;
 
         function __construct(){
-            require_once RUTA_MODELOS . 'mUsuario.php'; // Asegúrate que el archivo se llame mUsuario.php
+            require_once RUTA_MODELOS . 'Usuario.php'; // Asegúrate que el archivo se llame mUsuario.php
             $this->objUsuario = new MUsuario();
             $this->vista = '';
         }
