@@ -2,230 +2,168 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Fundamental para que el padding no rompa el ancho */
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente más moderna */
     background: linear-gradient(-45deg, #a8e6cf, #56c596, #f9f871, #f4ac3f);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
     padding: 20px;
+    color: #333;
+    /* Mantenemos el text-align center para el body (afecta al logo y buzon) */
     text-align: center;
 }
+
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
-/* Botón de login */
-.btn-login {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 14px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.btn-login:hover {
-    background-color: #45a049;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
 
 /* Logo */
 img {
-    max-width: 200px;
+    max-width: 180px;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-/* Formulario */
+img:hover {
+    transform: scale(1.05);
+}
+
+/* --- ESTILOS DEL FORMULARIO BASE --- */
 form {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.95); /* Ligeramente translúcido */
     max-width: 600px;
     margin: 0 auto;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-top: 5px solid #4CAF50;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra más suave y moderna */
+    border-top: 6px solid #4CAF50;
+    font-size: 16px;
 }
 
+/* --- CLASE ESPECÍFICA PARA LOGIN Y REGISTRO --- */
+/* Esta clase justifica todo a la izquierda y mejora los inputs de texto */
+.formulario-izquierda {
+    text-align: left;
+    max-width: 450px; /* Un poco más estrecho para que se vea elegante */
+}
+
+.formulario-izquierda label {
+    display: block; /* Fuerza que el label ocupe su propia línea */
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2d2d2d;
+}
+
+.formulario-izquierda input[type="text"],
+.formulario-izquierda input[type="email"],
+.formulario-izquierda input[type="password"] {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.formulario-izquierda input:focus {
+    border-color: #4CAF50;
+    background-color: #f9fff9;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.formulario-izquierda button {
+    width: 100%; /* Botón ancho completo */
+    margin-top: 10px;
+    padding: 14px;
+    font-size: 18px;
+}
+
+.pie-form {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: #666;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+/* --- ESTILOS PARA EL BUZÓN (Heredados/Genéricos) --- */
+/* Mantenemos estilos para elementos que no son de la clase .formulario-izquierda */
 h1 {
     color: #2d2d2d;
     margin-bottom: 25px;
     font-size: 24px;
 }
 
-/* Labels y inputs */
-label {
-    color: #333;
-    margin: 10px 5px;
-    display: inline-block;
-}
-
-input[type="radio"] {
-    margin: 10px 5px;
-    cursor: pointer;
-}
-
-input[type="checkbox"] {
-    margin: 15px 5px;
-    cursor: pointer;
-}
-input[type="email"]{
-    border: 2px solid #18481a;
-    width: 220px;
-    padding-left: 5px;
-    margin: 10px 5px;
-    cursor: pointer;
-}
-#email{
-    font-family: Arial, sans-serif;
-    font-size: 28px;
-}
-
-/* Select */
-select {
+select, textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0 20px 0;
-    border: 2px solid #4CAF50;
-    border-radius: 5px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
     font-size: 16px;
-    background-color: white;
-    cursor: pointer;
+    font-family: inherit;
 }
 
-select:focus {
+select:focus, textarea:focus {
     outline: none;
-    border-color: #45a049;
+    border-color: #4CAF50;
 }
 
-/* Textarea */
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0 20px 0;
-    border: 2px solid #4CAF50;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-    resize: vertical;
-}
-
-textarea:focus {
-    outline: none;
-    border-color: #45a049;
-}
-
-/* Botones */
 button {
     padding: 12px 30px;
-    margin: 10px 5px;
+    margin: 5px;
     font-size: 16px;
     font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+button:active {
+    transform: scale(0.98);
 }
 
 button[type="submit"] {
     background-color: #4CAF50;
     color: white;
 }
-
-button[type="submit"]:hover {
-    background-color: #45a049;
-}
+button[type="submit"]:hover { background-color: #45a049; }
 
 button[type="reset"] {
     background-color: #e74c3c;
     color: white;
 }
+button[type="reset"]:hover { background-color: #c0392b; }
 
-button[type="reset"]:hover {
-    background-color: #c0392b;
+.boton-enlace {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+.boton-enlace:hover { text-decoration: underline; }
+
+/* Checkboxes y Radios */
+input[type="radio"], input[type="checkbox"] {
+    accent-color: #4CAF50; /* Color moderno para inputs nativos */
+    transform: scale(1.2);
+    margin-right: 8px;
 }
 
-/* Saltos de línea */
-br {
-    display: block;
-    margin: 10px 0;
-}
-
-#terminos {
-    font-size: 10px;
-}
-
-input[type="checkbox"] {
-    margin: 15px 5px;
-    cursor: pointer;
-}
-
-/* Contenedor de checkboxes de contacto */
-#contacto {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin: 15px 0 20px 0;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border: 2px solid #4CAF50;
-    border-radius: 5px;
-}
-
-#contacto input[type="checkbox"] {
-    margin: 0 5px 0 0;
-}
-
-#contacto label {
-    margin: 0 15px 0 0;
-    font-weight: normal;
-}
-
-
-/* Footer */
 footer {
     margin-top: 40px;
-    padding: 20px;
-    background-color: #0d2a0d;
     color: white;
-    text-align: center;
-    border-radius: 5px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-footer p {
-    margin: 0;
-    font-size: 14px;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-    form {
-        padding: 20px;
-    }
-    
-    h1 {
-        font-size: 20px;
-    }
-    
-    button {
-        width: 100%;
-        margin: 5px 0;
-    }
+    font-size: 0.9em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
