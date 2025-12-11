@@ -15,7 +15,7 @@
             <?php
                 if (!empty($grupos)) {
                     foreach ($grupos as $grupo) {
-                        echo '<input type="radio" id="g'. $grupo['idGrupo'] . '" name="grupo" value="' . $grupo['idGrupo'] . '">';
+                        echo '<input type="radio" id="g'. $grupo['idGrupo'] . '" name="grupo" value="' . $grupo['idGrupo'] . '" required>';
                         echo '<label for="g'. $grupo['idGrupo'] . '">' . $grupo['Nombre'] . '</label>&nbsp;&nbsp;';
                     }
                 }

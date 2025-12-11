@@ -31,6 +31,8 @@ class CSugerencias {
     public function enviar() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
+            error_log("POST recibido: " . print_r($_POST, true));
+             
             // Validar que lleguen los datos
             if (empty($_POST['grupo']) || empty($_POST['tema']) || empty($_POST['mensaje'])) {
                 echo "<script>alert('Por favor, rellena todos los campos.');</script>";
