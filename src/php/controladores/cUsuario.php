@@ -35,10 +35,14 @@
                 // Usuario encontrado: Iniciamos sesión
                 $_SESSION['usuario'] = $usuario['Nombre'];
                 $_SESSION['idUsuario'] = $usuario['idUsuario'];
+                $_SESSION['tipo'] = $usuario['Tipo'];
                 
                 // Redirigir al buzón
-                header('Location: index.php?c=Sugerencias&m=index');
-                exit();
+                if ($usuario['Tipo'] == 0) {
+                    header('Location: index.php?c=Admin&m=index'); // Admin
+                } else {
+                    header('Location: index.php?c=Sugerencias&m=index'); // Usuario normal
+                }
             } else {
                 // Usuario no encontrado
                 echo "<script>alert('El usuario no existe. Regístrate primero.');</script>";
