@@ -48,6 +48,10 @@ form {
     font-size: 16px;
 }
 
+#terminos {
+    font-size: 10px;
+}
+
 /* --- CLASE ESPECÍFICA PARA LOGIN Y REGISTRO --- */
 /* Esta clase justifica todo a la izquierda y mejora los inputs de texto */
 .formulario-izquierda {
