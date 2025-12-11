@@ -8,7 +8,7 @@
     </head>
     <body>
         <img src="imagenes/logo.jpeg" alt="Logo Comparsa"><br>
-        <form action="enviar-datos.php" method="POST" onsubmit="mostrarMensaje()">
+        <form action="index.php?c=Sugerencias&m=enviar" method="POST" onsubmit="mostrarMensaje()">
             <h1>BUZON DE SUGERENCIAS</h1>
             
             <!-- Radio buttons -->

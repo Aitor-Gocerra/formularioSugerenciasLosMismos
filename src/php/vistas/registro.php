@@ -8,7 +8,7 @@
     </head>
     <body>
         <img src="imagenes/logo.jpeg" alt="Logo Comparsa"><br>
-        <form action="index.php?c=Usuario&m=validarEmail" method="POST">
+        <form action="index.php?c=Usuario&m=registrar" method="POST">
             <!-- EMAIL -->
             <label id="email">Introduce tu nombre</label>
             <br>
