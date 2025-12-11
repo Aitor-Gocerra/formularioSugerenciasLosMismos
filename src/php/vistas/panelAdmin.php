@@ -9,41 +9,43 @@
     <div class="contenedor">
         <div id="cabecera">
             <h1>Panel de Administración</h1>
-            <h3><?php echo $numFilas ?? 0; ?> sugerencias</h3>
-            
-            <a href="index.php?c=Usuario&m=cerrarSesion" class="btn-volver" style="background:#e74c3c; float:right; margin-left:10px;">Salir</a>
+            <div style="display:flex; gap:10px; align-items:center;">
+                <?php echo "<h3>" . ($numFilas ?? 0) . " sugerencias</h3>"; ?>
+                <a href="index.php?c=Usuario&m=cerrarSesion" class="btn-volver">Cerrar Sesión</a>
+            </div>
         </div>
         
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Fecha</th>
-                    <th>Sugerencia</th>
-                    <th>Tema</th>
-                    <th>Grupo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php 
-                    // Verificamos si hay datos en el array $sugerencias
-                    if (!empty($sugerencias)) {
-                        foreach ($sugerencias as $fila) {
-                            echo "<tr>";
-                            echo "<td><strong>#" . $fila['idSugerencia'] . "</strong></td>";
-                            echo "<td>" . $fila['Fecha'] . "</td>";
-                            echo "<td>" . $fila['Texto'] . "</td>";
-                            echo "<td><span class='tema'>" . $fila['Tema'] . "</span></td>";
-                            echo "<td><span class='grupo'>" . $fila['Grupo'] . "</span></td>";
-                            echo "</tr>";
+        <div class="tabla-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Fecha</th>
+                        <th>Sugerencia</th>
+                        <th>Tema</th>
+                        <th>Grupo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                        if (!empty($sugerencias)) { // Usando la variable array del controlador nuevo
+                            foreach ($sugerencias as $fila) {
+                                echo "<tr>";
+                                echo "<td><strong>#{$fila['idSugerencia']}</strong></td>";
+                                echo "<td>" . date('d/m/Y', strtotime($fila['Fecha'])) . "</td>"; // Formateamos la fecha un poco mejor
+                                echo "<td>{$fila['Texto']}</td>";
+                                echo "<td><span class='tema'>{$fila['Tema']}</span></td>";
+                                echo "<td><span class='grupo'>{$fila['Grupo']}</span></td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='5' style='text-align:center; padding:30px; color:#777;'>
+                                  No hay sugerencias registradas.</td></tr>";
                         }
-                    } else {
-                        echo "<tr><td colspan='5' style='text-align:center; padding:20px;'>
-                              No hay sugerencias todavía</td></tr>";
-                    }
-                ?>
-            </tbody>
-        </table>
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>
