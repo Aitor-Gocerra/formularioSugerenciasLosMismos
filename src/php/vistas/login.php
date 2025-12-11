@@ -7,20 +7,22 @@
         <link rel="stylesheet" href="css/estilo.css">
     </head>
     <body>
-        <img src="imagenes/logo.jpeg" alt="Logo Comparsa"><br>
-        <form action="index.php?c=Usuario&m=inicio" method="POST">
-            <!-- EMAIL -->
-            <label id="email">Introduce tu email</label>
-            <br>
-            <input type="email" name="email" placeholder="aitor@gmail.com" required><br>
-            <!-- Botones -->
-            <button type="submit">Enviar</button>
-            <!-- <button type="reset">Borrar</button> -->
-             <div style="margin-top: 20px; text-align: center;">
+        <img src="imagenes/logo.jpeg" alt="Logo Comparsa">
+        
+        <form action="index.php?c=Usuario&m=inicio" method="POST" class="formulario-izquierda">
+            <h1>Iniciar Sesión</h1>
+            
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" placeholder="ejemplo@gmail.com" required>
+
+            <button type="submit">Entrar</button>
+
+            <div class="pie-form">
                 <p>¿Aún no tienes cuenta?</p>
-                <a href="index.php?c=Usuario&m=registro" class="boton-enlace">Registrarse</a>
+                <a href="index.php?c=Usuario&m=registro" class="boton-enlace">Crear una cuenta</a>
             </div>
         </form>
+
         <footer>
             <p>&copy; 2025 Aitor Gómez Cerrato - Todos los derechos reservados.</p>
         </footer>

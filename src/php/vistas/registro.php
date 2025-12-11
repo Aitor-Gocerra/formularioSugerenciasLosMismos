@@ -7,24 +7,28 @@
         <link rel="stylesheet" href="css/estilo.css">
     </head>
     <body>
-        <img src="imagenes/logo.jpeg" alt="Logo Comparsa"><br>
-        <form action="index.php?c=Usuario&m=registrar" method="POST">
-            <!-- EMAIL -->
-            <label id="email">Introduce tu nombre</label>
-            <br>
-            <input type="text" name="nombre" placeholder="Aitor" required><br>
+        <img src="imagenes/logo.jpeg" alt="Logo Comparsa">
 
-            <label id="email">Introduce tu email</label>
-            <br>
-            <input type="email" name="email1" placeholder="aitor@gmail.com" required><br>
+        <form action="index.php?c=Usuario&m=registrar" method="POST" class="formulario-izquierda">
+            <h1>Crear Cuenta</h1>
 
-            <label id="email">Introduce tu email nuevamente</label>
-            <br>
-            <input type="email" name="email2" placeholder="aitor@gmail.com" required><br>
-            <!-- Botones -->
-            <button type="submit">Enviar</button>
-            <!-- <button type="reset">Borrar</button> -->
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+            <label for="email1">Correo Electrónico</label>
+            <input type="email" id="email1" name="email1" placeholder="tu@email.com" required>
+
+            <label for="email2">Confirma tu Correo</label>
+            <input type="email" id="email2" name="email2" placeholder="Repite tu email" required>
+
+            <button type="submit">Registrarse</button>
+
+            <div class="pie-form">
+                <p>¿Ya tienes cuenta?</p>
+                <a href="index.php?c=Usuario&m=login" class="boton-enlace">Inicia sesión aquí</a>
+            </div>
         </form>
+
         <footer>
             <p>&copy; 2025 Aitor Gómez Cerrato - Todos los derechos reservados.</p>
         </footer>
