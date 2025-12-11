@@ -12,9 +12,9 @@ class MAdmin extends Conexion {
                         S.Fecha, 
                         T.Nombre AS Tema, 
                         G.Nombre AS Grupo
-                    FROM SUGERENCIAS S
-                    INNER JOIN TEMAS T ON S.idTema = T.idTema
-                    INNER JOIN GRUPOS G ON S.idGrupo = G.idGrupo
+                    FROM sugerencias S
+                    INNER JOIN temas T ON S.idTema = T.idTema
+                    INNER JOIN grupos G ON S.idGrupo = G.idGrupo
                     ORDER BY S.Fecha DESC";
             
             $stmt = $this->conexion->prepare($sql);
