@@ -20,8 +20,8 @@ class CSugerencias {
             exit();
         }
 
-        $this->datos['temas'] = $this->objSugerencias->getTemas();
-        $this->datos['grupos'] = $this->objSugerencias->getGrupos();
+        $this->datos['temas'] = $this->objSugerencias->temas();
+        $this->datos['grupos'] = $this->objSugerencias->grupos();
         
         $this->vista = 'buzon';
         return $this->datos;

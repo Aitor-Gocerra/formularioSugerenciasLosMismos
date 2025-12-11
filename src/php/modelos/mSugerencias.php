@@ -3,9 +3,9 @@ require_once __DIR__ . '/mConexion.php';
 
 class MSugerencias extends Conexion {
 
-    public function getTemas() {
+    public function temas() {
         try {
-            $sql = "SELECT * FROM TEMAS";
+            $sql = "SELECT * FROM temas";
             $stmt = $this->conexion->prepare($sql);
             $stmt->execute();
             return $stmt->fetchAll(); // Devuelve todas las filas en un array
@@ -15,9 +15,9 @@ class MSugerencias extends Conexion {
         }
     }
 
-    public function getGrupos() {
+    public function grupos() {
         try {
-            $sql = "SELECT * FROM GRUPO";
+            $sql = "SELECT * FROM grupos";
             $stmt = $this->conexion->prepare($sql);
             $stmt->execute();
             return $stmt->fetchAll();
