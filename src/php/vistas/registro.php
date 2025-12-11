@@ -12,7 +12,7 @@
             <!-- EMAIL -->
             <label id="email">Introduce tu nombre</label>
             <br>
-            <input type="email" name="nombre" placeholder="Aitor" required><br>
+            <input type="text" name="nombre" placeholder="Aitor" required><br>
 
             <label id="email">Introduce tu email</label>
             <br>

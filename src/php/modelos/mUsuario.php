@@ -17,7 +17,7 @@
                 $stmt = $this->conexion->prepare($sql);
 
                 $stmt->bindValue(':nombre', $datos['Nombre'], PDO::PARAM_STR);
-                $stmt->bindValue(':nombre', $datos['Email'], PDO::PARAM_STR);
+                $stmt->bindValue(':email', $datos['Email'], PDO::PARAM_STR);
 
                 $stmt->execute();
             }catch (PDOException $error) {
@@ -37,22 +37,18 @@
             try{
 
                 $sql = "
-                    SELECT Email
+                    SELECT idUsuario, Nombre, Email, Tipo
                     FROM usuarios
                     WHERE Email = :email;
                 ";
 
                 $stmt = $this->conexion->prepare($sql);
-
                 $stmt->bindValue(':email', $datos['Email'], PDO::PARAM_STR);
+                $stmt->execute();
 
-                $exito = $stmt->execute();
-
-                if($exito){
-                    return true;
-                }else{
-                    return false;
-                }
+                // Verifica si encontró una fila y la devuelve
+                return $stmt->fetch();
+                
             } catch (PDOException $error){
                 error_log("Error BD en login: " . $error->getMessage()); 
                 $this->error = "ErrorInternoBD";
