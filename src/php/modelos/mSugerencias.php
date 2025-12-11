@@ -29,7 +29,7 @@ class MSugerencias extends Conexion {
 
     public function insertarSugerencia($datos) {
         try {
-            $sql = "INSERT INTO SUGERENCIAS (Texto, idTema, idGrupo, Fecha) 
+            $sql = "INSERT INTO sugerencias (Texto, idTema, idGrupo, Fecha) 
                     VALUES (:texto, :idTema, :idGrupo, NOW())";
             
             $stmt = $this->conexion->prepare($sql);
