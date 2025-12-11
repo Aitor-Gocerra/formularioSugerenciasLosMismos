@@ -48,5 +48,8 @@
             </table>
         </div>
     </div>
+    <footer>
+        <p>&copy; 2025 Aitor Gómez Cerrato - Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
